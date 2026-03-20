@@ -3,167 +3,750 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seyi — Developer</title>
-    <meta name="title" content="Seyi — Developer" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta
-      name="description"
-      content="Front End Developer based in Manchester, UK focused on creating interactive digital experiences on the web."
-    />
-    <meta
-      property="og:image"
-      content="https://res.cloudinary.com/dmwfd0zhh/image/upload/v1625786788/Portfolio/Frame_5_lchlvc.jpg"
-    />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://seyi.dev" />
-    <meta property="twitter:title" content="Seyi — Developer" />
-    <meta
-      property="twitter:description"
-      content="Front End Developer based in Manchester, UK focused on creating interactive digital experiences on the web."
-    />
-    <meta
-      property="twitter:image"
-      content="https://res.cloudinary.com/dmwfd0zhh/image/upload/v1625786788/Portfolio/Frame_5_lchlvc.jpg"
-    />
-
-    <!-- Open Graph / Facebook -->
+    <title>Piyush Thapa — Full Stack Developer</title>
+    <meta name="title" content="Piyush Thapa — Full Stack Developer" />
+    <meta name="description" content="Full Stack Developer (MERN) based in Greater Noida. Decoding Challenges, Building Digital Solutions." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://seyi.dev" />
-    <meta property="og:title" content="Seyi — Developer" />
-    <meta
-      property="og:description"
-      content="Front End Developer based in Manchester, UK focused on creating interactive digital experiences on the web."
-    />
-    <meta
-      property="og:image"
-      content="https://res.cloudinary.com/dmwfd0zhh/image/upload/v1625786788/Portfolio/Frame_5_lchlvc.jpg"
-    />
-
-    <script
-      type="text/javascript"
-      src="//w.24timezones.com/l.js"
-      async=""
-    ></script>
+    <meta property="og:title" content="Piyush Thapa — Full Stack Developer" />
+    <meta property="og:description" content="Full Stack Developer (MERN) based in Greater Noida. Decoding Challenges, Building Digital Solutions." />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Piyush Thapa — Full Stack Developer" />
+    <meta property="twitter:description" content="Full Stack Developer (MERN) based in Greater Noida. Decoding Challenges, Building Digital Solutions." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="preload"
-      href="fonts/opensauce-medium.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin=""
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="scss/index.scss" />
+    <style>
+      /* ===== RESET ===== */
+      html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,abbr,em,img,strong,sub,sup,b,u,i,ul,li,fieldset,footer,header,nav,section,time,mark{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+      article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block;}
+      body{line-height:1;}
+      ol,ul{list-style:none;}
+      *{box-sizing:border-box;}
+      *::before,*::after{box-sizing:border-box;}
+      a{color:inherit;text-decoration:none;}
+
+      /* ===== VARIABLES ===== */
+      :root {
+        --black: #0c0c0c;
+        --white: #ffffff;
+        --accent: #d4a843;
+        --boulder: #666666;
+        --gray: #aaaaaa;
+        --border: #222222;
+        --dim: #161616;
+        --font-display: 'Bebas Neue', sans-serif;
+        --font-body: 'DM Sans', sans-serif;
+      }
+
+      /* ===== GLOBALS ===== */
+      html {
+        font-size: calc(100vw / 1440 * 10);
+        overscroll-behavior: none;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        scroll-behavior: initial;
+      }
+      @media (max-width: 550px) { html { font-size: calc(100vw / 550 * 10); } }
+      @media (max-width: 375px) { html { font-size: calc(100vw / 375 * 10); } }
+
+      body {
+        font-family: var(--font-body), sans-serif;
+        font-weight: 400;
+        min-height: 100vh;
+        font-size: 1.6rem;
+        background: var(--black);
+        color: var(--gray);
+        opacity: 1;
+      }
+
+      /* ===== SMOOTH SCROLL ===== */
+      .home {
+        padding: 2.4rem 0;
+        visibility: visible;
+      }
+
+      /* ===== PADDING UTIL ===== */
+      %pad, .pad {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+      @media (max-width: 550px) {
+        .pad { padding-left: 1.6rem; padding-right: 1.6rem; }
+      }
+
+      /* ===== C-BUTTON ===== */
+      .c-button {
+        display: inline-block;
+        background: transparent;
+        color: var(--gray);
+        font-size: 12px;
+        font-family: var(--font-body);
+        text-transform: uppercase;
+        padding: 5px 12px;
+        border: 1.5px solid var(--boulder);
+        border-radius: 45px;
+        cursor: pointer;
+        transition: all 0.3s;
+        letter-spacing: 0.05em;
+      }
+      .c-button:hover {
+        border-color: var(--accent);
+        color: var(--black);
+        background: var(--accent);
+        font-weight: 500;
+      }
+      .c-button .c-link {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .c-button .c-link__inner {
+        display: flex;
+        transform: translateY(0);
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        margin-right: 2px;
+      }
+      .c-button .c-link__animated {
+        position: absolute;
+        top: 100%;
+        display: none;
+        font-family: var(--font-body);
+      }
+      @media (any-pointer: fine) {
+        .c-button .c-link__animated { display: inline-block; }
+        .c-button:hover .c-link__inner { transform: translateY(-100%); }
+      }
+
+      /* ===== NAV ===== */
+      .home__nav {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        margin-bottom: 6.4rem;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        font-family: var(--font-body);
+        line-height: 1.4;
+        letter-spacing: 0.03em;
+      }
+      @media (max-width: 550px) { .home__nav { padding-left: 1.6rem; padding-right: 1.6rem; } }
+      .home__nav__left, .home__nav__right {
+        text-transform: uppercase;
+        justify-content: space-between;
+      }
+      @media (min-width: 551px) {
+        .home__nav__left, .home__nav__right { display: flex; }
+      }
+      .home__nav__left { max-width: 49rem; width: 100%; margin-right: 5rem; }
+      @media (max-width: 550px) { .home__nav__left { margin-right: 2rem; max-width: unset; } }
+      .home__nav__right { max-width: 325px; width: 100%; align-items: center; gap: 1.6rem; }
+      @media (max-width: 550px) {
+        .home__nav__right { max-width: 175px; width: 100%; margin-left: auto; }
+        .home__nav__right br { display: none; }
+        .hide-mobile { display: none; }
+      }
+      @media (min-width: 551px) { .hide-desktop { display: none; } }
+      .nav__folio, .nav__availability { color: var(--boulder); }
+      @media (max-width: 550px) { .nav__folio { margin-bottom: 2.4rem; } }
+      .nav__button { flex-shrink: 0; flex-grow: 0; margin-left: auto; }
+
+      /* ===== HERO ===== */
+      .home__hero {
+        margin-bottom: 9.6rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+      @media (max-width: 550px) { .home__hero { padding-left: 1.6rem; padding-right: 1.6rem; } }
+
+      .hero__title { line-height: 0.9; color: var(--boulder); }
+
+      .hero__title h1.mobile {
+        font-family: var(--font-display);
+        font-size: 160px;
+        letter-spacing: -0.05em;
+        word-wrap: break-word;
+      }
+      @media (min-width: 551px) { .hero__title h1.mobile { display: none; } }
+      @media (max-width: 550px) { .hero__title .desktop { display: none; } }
+
+      .hero__hover { display: inline-block; transition: color 0.2s; cursor: default; }
+      @media (any-pointer: fine) { .hero__hover:hover { color: var(--gray); } }
+
+      .hero__title__left,
+      .hero__title__right,
+      .hero__title__dash {
+        display: inline-block;
+        font-family: var(--font-display);
+        font-size: 32.8rem;
+        letter-spacing: -0.105em;
+      }
+      .hero__title__dash { transform: scaleX(1.05); will-change: transform; }
+      @media (max-width: 768px) { .hero__title__dash.desktop { display: none; } }
+      .hero__title__dash.tablet { display: none; }
+      @media (max-width: 768px) and (min-width: 551px) { .hero__title__dash.tablet { display: inline-block; } }
+
+      .hero__title__top.inner-flex {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 3rem;
+      }
+      .hero__title__top.overflow,
+      .hero__title__bottom.overflow {
+        display: inline-flex;
+        width: 100%;
+        overflow: hidden;
+      }
+      .hero__title__bottom { width: 100%; justify-content: space-between; }
+      @media (min-width: 769px) { .hero__title__bottom { display: flex; } }
+
+      .bottom__left {
+        font-family: var(--font-display);
+        font-size: 32.8rem;
+        letter-spacing: -0.105em;
+        flex-shrink: 0;
+      }
+      .bottom__right {
+        font-family: var(--font-body);
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.5;
+        position: relative;
+        z-index: 1;
+        max-width: 32.5rem;
+        width: 100%;
+        padding: 2rem 0 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      @media (max-width: 768px) { .bottom__right { max-width: 55rem; padding-bottom: 0; font-size: 3rem; } }
+      @media (max-width: 550px) { .bottom__right { max-width: 255px; margin-left: auto; font-size: 16px; } }
+
+      .hero__paragraph { color: var(--gray); }
+      .hero__paragraph .first-word { font-size: 12px; color: var(--boulder); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.8rem; }
+      .hero__paragraph .highlight { color: var(--accent); }
+
+      .hero__scroll {
+        color: var(--boulder);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      @media (max-width: 768px) { .hero__scroll { display: none; } }
+
+      .c-infinite .c-link {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .c-infinite .c-link__inner {
+        display: flex;
+        transform: translateY(-100%);
+        animation: infiniteArrow 1s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .c-infinite .c-link__animated { position: absolute; top: 100%; }
+      @keyframes infiniteArrow { 100% { transform: translateY(0); } }
+
+      /* ===== PROJECT LINES ===== */
+      .home__projects {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+      @media (max-width: 550px) { .home__projects { padding-left: 1.6rem; padding-right: 1.6rem; } }
+
+      .home__projects__line {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        visibility: hidden;
+      }
+      .home__projects__line span {
+        height: 1px;
+        background: var(--border);
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%;
+        display: inline-block;
+        transform-origin: left top;
+      }
+      .home__projects__line.right span { transform-origin: right top; }
+
+      /* ===== PROJECT ITEMS ===== */
+      .home__projects__project { color: var(--boulder); }
+      @media (any-pointer: fine) {
+        .home__projects__project:hover .label__inner p:last-of-type { color: var(--gray); }
+      }
+
+      .home__projects__project__label {
+        font-size: 12px;
+        font-family: var(--font-body);
+        line-height: 1.3;
+        display: flex;
+        justify-content: flex-end;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-top: 3.2rem;
+        padding-right: 2.2rem;
+      }
+      .home__projects__project__label p { transition: color 0.2s; }
+      @media (min-width: 769px) { .home__projects__project__label { padding-right: 17.2rem; } }
+      .label-1 { max-width: 84.3rem; width: 100%; display: flex; justify-content: space-between; }
+
+      .home__projects__project__link { pointer-events: none; }
+      @media (any-pointer: fine) { .home__projects__project__link { pointer-events: auto; } }
+
+      .title__main { position: relative; }
+      @media (max-width: 550px) { .title__main.right { text-align: right; } }
+
+      .slide-up {
+        position: absolute; top: 0; left: 0;
+        overflow: hidden;
+        transform: translateY(100%);
+        transition: transform 275ms ease;
+        display: none;
+      }
+      @media (any-pointer: fine) { .slide-up { display: inline-block; } }
+      .slide-up::before {
+        display: inline-block;
+        content: attr(data-content);
+        color: var(--accent);
+        transform: translateY(-100%);
+        transition: transform 275ms ease;
+      }
+      @media (min-width: 769px) { .slide-up::before { white-space: nowrap; } }
+      .home__projects__project__link:hover .slide-up { transform: translateY(0); }
+      .home__projects__project__link:hover .slide-up::before { transform: translateY(0); }
+
+      .home__projects__project__title {
+        font-family: var(--font-display);
+        font-size: 16rem;
+        letter-spacing: -0.025em;
+        line-height: 1;
+        text-transform: uppercase;
+        padding-top: 6.4rem;
+        padding-bottom: 4.5rem;
+      }
+      @media (min-width: 769px) { .home__projects__project__title { white-space: nowrap; } }
+      @media (max-width: 550px) {
+        .home__projects__project__title {
+          font-size: 80px;
+          word-break: break-word;
+          padding-top: 3.2rem;
+          padding-bottom: 2.4rem;
+          line-height: 0.9;
+        }
+      }
+      .inline-ovh { display: inline-flex; overflow: hidden; }
+
+      .project__link {
+        text-align: right;
+        padding-right: 5rem;
+        padding-bottom: 3.1rem;
+      }
+      @media (min-width: 551px) { .project__link { display: none; } }
+
+      .share-icon { position: relative; top: 0.3rem; display: inline-block; }
+
+      /* ===== SKILLS / INFO SECTION ===== */
+      .home__content {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+      @media (max-width: 550px) {
+        .home__content { padding-top: 8rem; padding-bottom: 8rem; padding-left: 1.6rem; padding-right: 1.6rem; }
+      }
+      @media (min-width: 769px) { .home__content { text-align: center; } }
+
+      .home__content__title {
+        font-size: 12px;
+        font-family: var(--font-body);
+        text-transform: uppercase;
+        color: var(--boulder);
+        margin-bottom: 2.4rem;
+        letter-spacing: 0.1em;
+      }
+      .home__content__desc {
+        font-family: var(--font-body);
+        font-size: 3.2rem;
+        line-height: 1.35;
+        letter-spacing: -0.025em;
+        max-width: 95rem;
+        width: 100%;
+      }
+      @media (max-width: 550px) { .home__content__desc { font-size: 32px; } }
+      @media (min-width: 769px) { .home__content__desc { margin: 0 auto; } }
+      .home__content__desc a { color: var(--boulder); transition: color 0.3s; }
+      @media (any-pointer: fine) { .home__content__desc a:hover { color: var(--accent); } }
+
+      /* ===== AWARDS / INFO COLS ===== */
+      .home__awards {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        justify-content: space-between;
+        max-width: 113rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+      @media (min-width: 769px) { .home__awards { display: flex; padding-top: 10rem; padding-bottom: 10rem; } }
+      @media (max-width: 550px) { .home__awards { padding-left: 1.6rem; padding-right: 1.6rem; } }
+
+      .home__awards__left { margin-bottom: 9.6rem; }
+      @media (min-width: 769px) { .home__awards__left { max-width: 55.5rem; width: 100%; margin-bottom: 0; } }
+      @media (min-width: 769px) { .home__awards__right { max-width: 32.5rem; width: 100%; } }
+
+      .awards__title {
+        font-size: 12px;
+        font-family: var(--font-body);
+        color: var(--boulder);
+        margin-bottom: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .awards__item {
+        font-family: var(--font-body);
+        font-size: 2.4rem;
+        font-weight: 400;
+        line-height: 1.4;
+        padding: 20px 0;
+        border-top: 1px solid var(--border);
+        position: relative;
+        transition: color 0.2s;
+        color: var(--gray);
+      }
+      @media (max-width: 768px) { .awards__item { font-size: 3rem; } }
+      @media (max-width: 550px) { .awards__item { font-size: 20px; } }
+
+      .home__awards__stack { margin-bottom: 9.6rem; }
+      .home__awards__ice .home__content__title { text-transform: uppercase; color: var(--boulder); }
+      .home__awards__ice .home__content__desc,
+      .home__awards__stack .home__content__desc {
+        font-size: 2.4rem;
+        line-height: 1.5;
+        letter-spacing: -0.02em;
+      }
+      @media (max-width: 768px) {
+        .home__awards__ice .home__content__desc,
+        .home__awards__stack .home__content__desc { font-size: 3rem; }
+      }
+      @media (max-width: 550px) {
+        .home__awards__ice .home__content__desc,
+        .home__awards__stack .home__content__desc { font-size: 20px; letter-spacing: 0; }
+      }
+      .home__awards__ice .home__content__desc a,
+      .home__awards__stack .home__content__desc a { color: var(--boulder); text-transform: uppercase; transition: color 0.3s; }
+      @media (any-pointer: fine) {
+        .home__awards__ice .home__content__desc a:hover,
+        .home__awards__stack .home__content__desc a:hover { color: var(--accent); }
+      }
+      .contact-scroll-btn {
+        color: var(--boulder);
+        transition: color 0.3s;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        font-family: var(--font-body);
+        font-size: 3.2rem;
+        line-height: 1.3;
+        letter-spacing: -0.025em;
+        font-weight: 500;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+      @media (max-width: 768px) { .contact-scroll-btn { font-size: 3rem; } }
+      @media (max-width: 550px) { .contact-scroll-btn { font-size: 32px; letter-spacing: 0; } }
+      @media (any-pointer: fine) { .contact-scroll-btn:hover { color: var(--accent); } }
+
+      /* ===== CONTACT ===== */
+      .home__contact { }
+      @media (min-width: 769px) { .home__contact { padding-top: 16rem; } }
+      .line-wrapper { padding-left: 4rem; padding-right: 4rem; }
+      @media (max-width: 550px) { .line-wrapper { padding-left: 1.6rem; padding-right: 1.6rem; } }
+
+      .home__contact__desc {
+        font-family: var(--font-body);
+        font-size: 3.2rem;
+        font-weight: 400;
+        line-height: 1.35;
+        letter-spacing: -0.025em;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        margin: 0;
+        margin-bottom: 6.4rem;
+      }
+      @media (max-width: 768px) { .home__contact__desc { font-size: 3rem; } }
+      @media (max-width: 550px) { .home__contact__desc { font-size: 32px; letter-spacing: 0; padding-left: 1.6rem; padding-right: 1.6rem; } }
+      @media (min-width: 551px) {
+        .home__contact__desc { max-width: 72rem; text-align: center; margin-left: auto; margin-right: auto; padding: 0; }
+      }
+
+      .marquee { text-transform: uppercase; overflow: hidden; }
+      .marquee__wrap:hover .marquee__inner { animation-play-state: paused; }
+      .marquee__wrap:hover .marquee__inner:hover .slide-up { transform: translateY(0); }
+      .marquee__wrap:hover .marquee__inner:hover .slide-up::before { transform: translateY(0); }
+      .marquee__inner {
+        height: 100%;
+        width: fit-content;
+        align-items: center;
+        display: flex;
+        position: relative;
+        animation: marquee 25s linear infinite;
+        will-change: transform;
+        padding-top: 2.4rem;
+        padding-bottom: 1rem;
+      }
+      @media (min-width: 551px) { .marquee__inner { padding-top: 5.8rem; padding-bottom: 2.3rem; } }
+      .marquee__inner span { white-space: nowrap; padding-left: 2rem; padding-right: 2rem; }
+      .inner-span {
+        font-family: var(--font-display);
+        font-size: 16rem;
+        letter-spacing: -0.025em;
+        color: var(--boulder);
+        position: relative;
+        overflow: hidden;
+      }
+      @media (max-width: 550px) { .inner-span { font-size: 80px; word-break: break-word; } }
+      .inner-span .slide-up {
+        position: absolute; top: 0; left: 0;
+        overflow: hidden;
+        transform: translateY(100%);
+        transition: transform 275ms ease;
+        display: none;
+      }
+      @media (any-pointer: fine) { .inner-span .slide-up { display: inline-block; } }
+      .inner-span .slide-up::before {
+        display: inline-block;
+        content: attr(data-content);
+        white-space: nowrap;
+        color: var(--accent);
+        transform: translateY(-100%);
+        transition: transform 275ms ease;
+      }
+      @keyframes marquee { 100% { transform: translate3d(-50%, 0, 0); } }
+
+      .home__contact__email {
+        padding-top: 4.8rem;
+        padding-bottom: 7.2rem;
+        text-align: center;
+      }
+      @media (max-width: 550px) { .home__contact__email { max-width: 255px; width: 100%; text-align: left; margin-left: auto; word-break: break-word; } }
+
+      .to-copy {
+        font-family: var(--font-body);
+        font-size: 1.6rem;
+        display: none;
+      }
+      @media (any-pointer: fine) {
+        .to-copy { display: block; opacity: 0; text-transform: uppercase; transform: translateY(100%); transition: opacity 0.3s, transform 0.3s; }
+      }
+      @media (max-width: 550px) { .to-copy { font-size: 16px; } }
+      .to-copy span { padding: 5px 8px; border: 1.5px solid var(--boulder); border-radius: 45px; font-size: 12px; letter-spacing: 0.05em; }
+
+      button.email {
+        font-family: var(--font-body);
+        font-size: 3.2rem;
+        line-height: 1.3;
+        letter-spacing: -0.025em;
+        background: transparent;
+        border: 0;
+        font-weight: 500;
+        cursor: pointer;
+        color: var(--gray);
+        padding: 0;
+        margin-bottom: 1.6rem;
+        transition: color 0.3s;
+        display: block;
+      }
+      @media (max-width: 768px) { button.email { text-align: left; } }
+      @media (max-width: 550px) { button.email { font-size: 32px; } }
+      @media (any-pointer: fine) { button.email:hover { color: var(--accent); } }
+      button.email:hover + .to-copy { transform: translateY(0); opacity: 1; }
+
+      /* ===== FOOTER ===== */
+      .home__footer {
+        justify-content: center;
+        position: relative;
+        padding-bottom: 4rem;
+        font-weight: 400;
+        font-size: 16px;
+        font-family: var(--font-body);
+      }
+      @media (min-width: 769px) { .home__footer { display: flex; } }
+      @media (max-width: 768px) { .home__footer { margin-left: auto; max-width: 40rem; width: 100%; } }
+      @media (max-width: 550px) { .home__footer { max-width: 255px; width: 100%; } }
+
+      .home__footer__left {
+        display: flex;
+        font-family: var(--font-body);
+      }
+      @media (min-width: 769px) { .home__footer__left { left: 2.4rem; position: absolute; right: 0; top: 1rem; } }
+      .home__footer__left .place { color: var(--boulder); margin-right: 1.4rem; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; }
+      .home__footer__left .time { position: relative; display: flex; font-size: 12px; color: var(--boulder); }
+      @media (max-width: 768px) { .home__footer__left .time { margin-bottom: 2.4rem; } }
+
+      .flash { animation: blinker 1s step-start infinite; }
+      @keyframes blinker { 50% { opacity: 0; } }
+
+      .home__footer__right {
+        font-size: 12px;
+        color: var(--boulder);
+        letter-spacing: 0.03em;
+      }
+      @media (min-width: 769px) { .home__footer__right { right: 2.4rem; position: absolute; top: 1rem; } }
+      .home__footer__right a { color: var(--boulder); transition: color 0.3s; }
+      @media (any-pointer: fine) { .home__footer__right a:hover { color: var(--accent); } }
+
+      .home__footer__center .footer__links {
+        align-items: center;
+      }
+      @media (min-width: 769px) { .home__footer__center .footer__links { display: flex; } }
+      @media (max-width: 768px) { .home__footer__center .footer__links { margin-bottom: 4.8rem; } }
+      .link__flex { display: flex; margin-left: auto; }
+      @media (max-width: 768px) { .link__flex { max-width: 40rem; width: 100%; } }
+      @media (max-width: 550px) { .link__flex { max-width: 255px; width: 100%; } }
+      .link__flex__inner { display: flex; gap: 0.8rem; }
+      @media (min-width: 769px) { .link__flex + .link__flex { margin-left: 0.8rem; } }
+      @media (max-width: 768px) { .link__flex__inner.second { margin-top: 1.6rem; flex-direction: row-reverse; } }
+
+      /* ===== DARJEELING BADGE ===== */
+      .darjeeling-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 11px;
+        font-family: var(--font-body);
+        color: var(--boulder);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-top: 1.2rem;
+      }
+      .darjeeling-tag .dot {
+        width: 5px; height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+        display: inline-block;
+        animation: pulse 2.5s ease-in-out infinite;
+      }
+      @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.7)} }
+
+      /* ===== EDUCATION / CERT TAGS ===== */
+      .tag-pill {
+        display: inline-block;
+        font-size: 12px;
+        font-family: var(--font-body);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding: 5px 12px;
+        border: 1px solid var(--border);
+        border-radius: 45px;
+        color: var(--boulder);
+        margin-right: 0.6rem;
+        margin-bottom: 0.6rem;
+        transition: border-color 0.3s, color 0.3s;
+      }
+      @media (any-pointer: fine) { .tag-pill:hover { border-color: var(--accent); color: var(--accent); } }
+      .awards__item .sub {
+        color: var(--boulder);
+        font-size: 13px;
+        margin-top: 8px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      /* ===== SCROLL / LOCONATIVE ===== */
+      html.has-scroll-dragging { user-select: none; }
+      html, body { width: 100%; min-height: 100%; }
+      .has-scroll-smooth [data-scroll-container] { min-height: 100vh; }
+    </style>
   </head>
 
   <body>
-    <main class="home" data-scroll-container="">
+    <main class="home" data-scroll-container>
+
+      <!-- ===== NAV ===== -->
       <nav class="home__nav">
         <div class="home__nav__left">
-          <div class="nav__name" nav-anim="">
+          <div class="nav__name" nav-anim>
             <span>
-              Oluwadare <br />
-              Oluwaseyi</span
-            >
+              Piyush<br />
+              Thapa
+            </span>
           </div>
-
-          <div class="nav__folio hide-mobile" nav-anim="">
+          <div class="nav__folio hide-mobile" nav-anim>
             <span>
-              Frontend Developer <br />
-              Folio / 2021 — 2024
+              Full Stack Developer<br />
+              Folio / 2024 — 2028
             </span>
           </div>
         </div>
 
         <div class="home__nav__right">
-          <div class="nav__folio hide-desktop" nav-anim="">
-            Frontend Developer <br />
-            Folio / 2021 — 2024
+          <div class="nav__folio hide-desktop" nav-anim>
+            Full Stack Developer<br />
+            Folio / 2024 — 2028
           </div>
-
-          <div class="nav__availability" nav-anim=""></div>
-
-          <button class="nav__button c-button contact-scroll" nav-anim="">
+          <div class="nav__availability" nav-anim></div>
+          <button class="nav__button c-button contact-scroll" nav-anim>
             <span class="c-link">
-              <span class="c-link__inner">
-                <span> contact </span>
-                <span class="c-link__animated"> contact </span>
-              </span>
+              <span class="c-link__inner"><span>contact</span></span>
+              <span class="c-link__animated">contact</span>
             </span>
           </button>
         </div>
       </nav>
 
+      <!-- ===== HERO ===== -->
       <section class="home__hero">
         <div class="hero__title">
+
+          <!-- Mobile -->
           <h1 class="mobile">
-            FRONT <br />
-            —— END <br />
+            FULL<br />
+            —— STACK<br />
             DEVELOPER
           </h1>
+
+          <!-- Desktop top row -->
           <h1 class="hero__title__top overflow desktop">
-            <div class="hero__title__top" title-overflow="">
-              <span
-                class="hero__title__left"
-                data-scroll=""
-                data-scroll-direction="horizontal"
-                data-scroll-position="top"
-                data-scroll-speed="7"
-              >
-                <span class="hero__hover">F</span>
-                <span class="hero__hover">R</span>
-                <span class="hero__hover">O</span>
-                <span class="hero__hover">N</span>
-                <span class="hero__hover">T</span>
+            <div class="hero__title__top inner-flex" title-overflow>
+              <span class="hero__title__left"
+                data-scroll data-scroll-direction="horizontal"
+                data-scroll-position="top" data-scroll-speed="7">
+                <span class="hero__hover">F</span><span class="hero__hover">U</span><span class="hero__hover">L</span><span class="hero__hover">L</span>
               </span>
               <span class="hero__title__dash desktop">——</span>
               <span class="hero__title__dash tablet">——</span>
-
-              <span
-                class="hero__title__right"
-                data-scroll=""
-                data-scroll-direction="horizontal"
-                data-scroll-position="top"
-                data-scroll-speed="-7"
-              >
-                <span class="hero__hover">E</span>
-                <span class="hero__hover">N</span>
-                <span class="hero__hover">D</span>
+              <span class="hero__title__right"
+                data-scroll data-scroll-direction="horizontal"
+                data-scroll-position="top" data-scroll-speed="-7">
+                <span class="hero__hover">S</span><span class="hero__hover">T</span><span class="hero__hover">A</span><span class="hero__hover">C</span><span class="hero__hover">K</span>
               </span>
             </div>
           </h1>
 
+          <!-- Desktop bottom row -->
           <span class="hero__title__bottom overflow">
             <div class="hero__title__bottom">
-              <h1 class="bottom__left desktop" title-overflow="">
-                <span class="hero__hover">D</span>
-                <span class="hero__hover">E</span>
-                <span class="hero__hover">V</span>
-                <span class="hero__hover">E</span>
-                <span class="hero__hover">L</span>
-                <span class="hero__hover">O</span>
-                <span class="hero__hover">P</span>
-                <span class="hero__hover">E</span>
-                <span class="hero__hover">R</span>
+              <h1 class="bottom__left desktop" title-overflow>
+                <span class="hero__hover">D</span><span class="hero__hover">E</span><span class="hero__hover">V</span><span class="hero__hover">E</span><span class="hero__hover">L</span><span class="hero__hover">O</span><span class="hero__hover">P</span><span class="hero__hover">E</span><span class="hero__hover">R</span>
               </h1>
               <div class="bottom__right">
                 <p class="hero__paragraph">
-                  <span class="first-word">About</span> &nbsp; I am a developer
-                  based in Manchester, UK focused on creating interactive
-                  digital experiences on the web, working with brands and
-                  industry leaders such as <span>Google Fonts,</span>
-                  <span>Paystack,</span> <span>Heva Health,</span>
-                  <span>Disney,</span> <span>Jelly,</span> and
-                  <span>Null</span>
-                  amongst others to achieve this.
+                  <span class="first-word">About</span>
+                  I'm a CS student at <span class="highlight">Sharda University</span>, originally from the misty hills of <span class="highlight">Darjeeling, West Bengal</span>. I'm learning to build full-stack web apps using the <span class="highlight">MERN stack</span> — currently exploring REST APIs, backend architecture, and everything in between.
                 </p>
                 <div class="hero__scroll">
                   <p>Scroll down</p>
@@ -171,31 +754,13 @@
                     <span class="c-link">
                       <span class="c-link__inner">
                         <span>
-                          <svg
-                            width="20"
-                            height="21"
-                            viewBox="0 0 20 21"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M10.8333 13.9766L15.3033 9.50658L16.4816 10.6849L9.99998 17.1666L3.51831 10.6849L4.69664 9.50658L9.16664 13.9766V3.83325H10.8333V13.9766Z"
-                              fill="#777777"
-                            ></path>
+                          <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.8333 13.9766L15.3033 9.50658L16.4816 10.6849L9.99998 17.1666L3.51831 10.6849L4.69664 9.50658L9.16664 13.9766V3.83325H10.8333V13.9766Z" fill="#666666"/>
                           </svg>
                         </span>
                         <span class="c-link__animated">
-                          <svg
-                            width="20"
-                            height="21"
-                            viewBox="0 0 20 21"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M10.8333 13.9766L15.3033 9.50658L16.4816 10.6849L9.99998 17.1666L3.51831 10.6849L4.69664 9.50658L9.16664 13.9766V3.83325H10.8333V13.9766Z"
-                              fill="#777777"
-                            ></path>
+                          <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.8333 13.9766L15.3033 9.50658L16.4816 10.6849L9.99998 17.1666L3.51831 10.6849L4.69664 9.50658L9.16664 13.9766V3.83325H10.8333V13.9766Z" fill="#666666"/>
                           </svg>
                         </span>
                       </span>
@@ -208,693 +773,178 @@
         </div>
       </section>
 
-      <section class="home__projects" data-projects-section-1="">
+      <!-- ===== PROJECTS ===== -->
+      <section class="home__projects" data-projects-section-1>
         <span class="home__projects__line left"><span></span></span>
+
         <div class="home__projects__project right">
           <div class="home__projects__project__label">
             <div class="label__inner label-1">
-              <p>
-                FEATURED <br />
-                PROJECTS (7)
-              </p>
-              <p>
-                Art Direction / <br />
-                Creative Development
-              </p>
+              <p>FEATURED<br />PROJECTS (1)</p>
+              <p>Full Stack /<br />REST API Development</p>
             </div>
           </div>
-
-          <a
-            href="https://www.afrotype.com/tac"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="home__projects__project__link"
-          >
-            <h1
-              class="home__projects__project__title"
-              data-scroll=""
-              data-scroll-direction="horizontal"
-              data-scroll-speed="8"
-            >
+          <a href="https://air-bnb-lilac-iota.vercel.app/" target="_blank" rel="noopener noreferrer" class="home__projects__project__link">
+            <h1 class="home__projects__project__title"
+              data-scroll data-scroll-direction="horizontal" data-scroll-speed="8">
               <span class="inline-ovh">
                 <div class="title__main right">
-                  <span
-                    class="slide-up"
-                    data-content="Tac — GOOGLE FONTS COMMISSIONED TYPEFACE"
-                    aria-hidden="true"
-                  ></span>
-                  Tac — GOOGLE FONTS COMMISSIONED TYPEFACE
+                  <span class="slide-up" data-content="AIRBNB CLONE — PROPERTY BOOKING API" aria-hidden="true"></span>
+                  AIRBNB CLONE — PROPERTY BOOKING API
                 </div>
               </span>
             </h1>
           </a>
-
           <div class="project__link">
-            <a
-              href="https://www.afrotype.com/tac"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="c-button"
-            >
+            <a href="https://air-bnb-lilac-iota.vercel.app/" target="_blank" rel="noopener noreferrer" class="c-button">
               <span class="c-link">
                 <span class="c-link__inner">
-                  <span>
-                    Visit Site
-                    <span class="share-icon">
-                      <svg
-                        width="20"
-                        height="20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M13.337 7.845l-7.173 7.173-1.178-1.179 7.172-7.172H5.837V5h9.166v9.167h-1.666V7.845z"
-                          fill="#777"
-                        ></path>
-                      </svg>
-                    </span>
-                  </span>
+                  <span>View on GitHub <span class="share-icon">
+                    <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.337 7.845l-7.173 7.173-1.178-1.179 7.172-7.172H5.837V5h9.166v9.167h-1.666V7.845z" fill="#777"/></svg>
+                  </span></span>
                 </span>
               </span>
             </a>
           </div>
         </div>
+
         <span class="home__projects__line right"><span></span></span>
-        <div class="home__projects__project left">
-          <div class="home__projects__project__label">
-            <div class="label__inner">
-              <p>
-                Art Direction / <br />
-                E-Commerce Development
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="https://www.pithafrica.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="home__projects__project__link"
-          >
-            <h1
-              class="home__projects__project__title"
-              data-scroll=""
-              data-scroll-direction="horizontal"
-              data-scroll-speed="-8"
-            >
-              <span class="inline-ovh">
-                <div class="title__main left">
-                  <span
-                    class="slide-up"
-                    data-content="PITH AFRICA — CUSTOM E-COMM EXPERIENCE"
-                    aria-hidden="true"
-                  ></span>
-                  PITH AFRICA — CUSTOM E-COMM EXPERIENCE
-                </div>
-              </span>
-            </h1>
-          </a>
-
-          <div class="project__link">
-            <a
-              href="https://www.pithafrica.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="c-button"
-            >
-              <span class="c-link">
-                <span class="c-link__inner">
-                  <span>
-                    Visit Site
-                    <span class="share-icon">
-                      <svg
-                        width="20"
-                        height="20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M13.337 7.845l-7.173 7.173-1.178-1.179 7.172-7.172H5.837V5h9.166v9.167h-1.666V7.845z"
-                          fill="#777"
-                        ></path>
-                      </svg>
-                    </span>
-                  </span>
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <span class="home__projects__line left"><span></span></span>
-        <div class="home__projects__project right">
-          <div class="home__projects__project__label">
-            <div class="label__inner">
-              <p>
-                Art Direction / <br />
-                Creative Development
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="https://2022.madebynull.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="home__projects__project__link"
-          >
-            <h1
-              class="home__projects__project__title"
-              data-scroll=""
-              data-scroll-direction="horizontal"
-              data-scroll-speed="8"
-            >
-              <span class="inline-ovh">
-                <div class="title__main right">
-                  <span
-                    class="slide-up"
-                    data-content="STUDIO NULL — RADIO NULL REWIND 2022"
-                    aria-hidden="true"
-                  ></span>
-                  STUDIO NULL — RADIO NULL REWIND 2022
-                </div>
-              </span>
-            </h1>
-          </a>
-
-          <div class="project__link">
-            <a
-              href="https://2022.madebynull.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="c-button"
-            >
-              <span class="c-link">
-                <span class="c-link__inner">
-                  <span>
-                    Visit Site
-                    <span class="share-icon">
-                      <svg
-                        width="20"
-                        height="20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M13.337 7.845l-7.173 7.173-1.178-1.179 7.172-7.172H5.837V5h9.166v9.167h-1.666V7.845z"
-                          fill="#777"
-                        ></path>
-                      </svg>
-                    </span>
-                  </span>
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <span class="home__projects__line right"><span></span></span>
-        <div class="home__projects__project left">
-          <div class="home__projects__project__label">
-            <div class="label__inner">
-              <p>
-                3D Exploration / <br />
-                Creative Development
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="https://fayemi.design/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="home__projects__project__link"
-          >
-            <h1
-              class="home__projects__project__title"
-              data-scroll=""
-              data-scroll-direction="horizontal"
-              data-scroll-speed="-8"
-            >
-              <span class="inline-ovh">
-                <div class="title__main left">
-                  <span
-                    class="slide-up"
-                    data-content="GRP 256 — FOLIO FOR VISUAL DESIGNER"
-                    aria-hidden="true"
-                  ></span>
-                  GRP 256 — FOLIO FOR VISUAL DESIGNER
-                </div>
-              </span>
-            </h1>
-          </a>
-
-          <div class="project__link">
-            <a
-              href="https://fayemi.design/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="c-button"
-            >
-              <span class="c-link">
-                <span class="c-link__inner">
-                  <span>
-                    Visit Site
-                    <span class="share-icon">
-                      <svg
-                        width="20"
-                        height="20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M13.337 7.845l-7.173 7.173-1.178-1.179 7.172-7.172H5.837V5h9.166v9.167h-1.666V7.845z"
-                          fill="#777"
-                        ></path>
-                      </svg>
-                    </span>
-                  </span>
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <span class="home__projects__line left"><span></span></span>
       </section>
 
+      <!-- ===== SKILLS SECTION ===== -->
       <section class="home__content">
-        <h2 class="home__content__title">COMMUNITY CONTRIBUTIONS</h2>
+        <h2 class="home__content__title">Tech Stack</h2>
         <p class="home__content__desc">
-          I have worked on some resources and tools; mostly for designers and
-          developers like myself, you should check out
-          <a
-            href="https://www.figma.com/community/plugin/943569346291474506/Tints-and-Shades"
-            target="_blank"
-            rel="noopener noreferrer"
-            >TINTS AND SHADES</a
-          >
-          and
-          <a
-            href="https://www.figma.com/community/plugin/949697027067571105/Nigerian-Logos"
-            target="_blank"
-            rel="noopener noreferrer"
-            >NIGERIAN LOGOS</a
-          >
+          I'm learning to build across the full stack — from REST APIs and database design to frontend interfaces.
+          My current toolkit revolves around the <a href="https://github.com/PiyushThapa6" target="_blank" rel="noopener noreferrer">MERN stack</a>:
+          MongoDB, Express.js, React.js, and Node.js. I'm also getting comfortable with JWT authentication, REST API design, and Git-based workflows.
         </p>
       </section>
 
-      <section class="home__projects" data-projects-section-2="">
-        <span class="home__projects__line left"><span></span></span>
-        <div class="home__projects__project right">
-          <div class="home__projects__project__label">
-            <div class="label__inner">
-              <p>
-                GAME (WEB) / <br />
-                Creative Development
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="https://paystack.com/terminal/dash/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="home__projects__project__link"
-          >
-            <h1
-              class="home__projects__project__title"
-              data-scroll=""
-              data-scroll-direction="horizontal"
-              data-scroll-speed="8"
-            >
-              <span class="inline-ovh">
-                <div class="title__main right">
-                  <span
-                    class="slide-up"
-                    data-content="TERMINAL DASH — WEB-BASED GAME"
-                    aria-hidden="true"
-                  ></span>
-                  TERMINAL DASH — WEB-BASED GAME
-                </div>
-              </span>
-            </h1>
-          </a>
-
-          <div class="project__link">
-            <a
-              href="https://paystack.com/terminal/dash/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="c-button"
-            >
-              <span class="c-link">
-                <span class="c-link__inner">
-                  <span>
-                    Visit Site
-                    <span class="share-icon">
-                      <svg
-                        width="20"
-                        height="20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M13.337 7.845l-7.173 7.173-1.178-1.179 7.172-7.172H5.837V5h9.166v9.167h-1.666V7.845z"
-                          fill="#777"
-                        ></path>
-                      </svg>
-                    </span>
-                  </span>
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <span class="home__projects__line right"><span></span></span>
-        <div class="home__projects__project left">
-          <div class="home__projects__project__label">
-            <div class="label__inner">
-              <p>
-                UI Development / <br />
-                PRODUCT ENGINEERING
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="https://deploy-preview-162--paystack-terminal.netlify.app/terminal/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="home__projects__project__link"
-          >
-            <h1
-              class="home__projects__project__title"
-              data-scroll=""
-              data-scroll-direction="horizontal"
-              data-scroll-speed="-8"
-            >
-              <span class="inline-ovh">
-                <div class="title__main left">
-                  <span
-                    class="slide-up"
-                    data-content="PAYSTACK TERMINAL — MORE THAN A POS"
-                    aria-hidden="true"
-                  ></span>
-                  PAYSTACK TERMINAL — MORE THAN A POS
-                </div>
-              </span>
-            </h1>
-          </a>
-
-          <div class="project__link">
-            <a
-              href="https://deploy-preview-162--paystack-terminal.netlify.app/terminal/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="c-button"
-            >
-              <span class="c-link">
-                <span class="c-link__inner">
-                  <span>
-                    Visit Site
-                    <span class="share-icon">
-                      <svg
-                        width="20"
-                        height="20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M13.337 7.845l-7.173 7.173-1.178-1.179 7.172-7.172H5.837V5h9.166v9.167h-1.666V7.845z"
-                          fill="#777"
-                        ></path>
-                      </svg>
-                    </span>
-                  </span>
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <span class="home__projects__line left"><span></span></span>
-        <div class="home__projects__project right">
-          <div class="home__projects__project__label">
-            <div class="label__inner">
-              <p>
-                ART DIRECTION / <br />
-                Creative Development
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="https://kortyeo.madebynull.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="home__projects__project__link"
-          >
-            <h1
-              class="home__projects__project__title"
-              data-scroll=""
-              data-scroll-direction="horizontal"
-              data-scroll-speed="8"
-            >
-              <span class="inline-ovh">
-                <div class="title__main right">
-                  <span
-                    class="slide-up"
-                    data-content="KORTY EO — A FANSITE FOR KORTY"
-                    aria-hidden="true"
-                  ></span>
-                  KORTY EO — A FANSITE FOR KORTY
-                </div>
-              </span>
-            </h1>
-          </a>
-
-          <div class="project__link">
-            <a
-              href="https://kortyeo.madebynull.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="c-button"
-            >
-              <span class="c-link">
-                <span class="c-link__inner">
-                  <span>
-                    Visit Site
-                    <span class="share-icon">
-                      <svg
-                        width="20"
-                        height="20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M13.337 7.845l-7.173 7.173-1.178-1.179 7.172-7.172H5.837V5h9.166v9.167h-1.666V7.845z"
-                          fill="#777"
-                        ></path>
-                      </svg>
-                    </span>
-                  </span>
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <span class="home__projects__line right"><span></span></span>
-      </section>
-
+      <!-- ===== EDUCATION + CERTIFICATIONS + INTERESTS ===== -->
       <section class="home__awards">
         <div class="home__awards__left">
-          <h2 class="awards__title">
-            <span>AWARDS X </span><br />
-            <span>RECOGNITION</span>
-          </h2>
+          <h2 class="awards__title">Education &amp; Certifications</h2>
           <div class="home__awards__table">
-            <div class="awards__item" data-fade-in="">
-              Webby ⏤ 2024 Awards Honoree
-            </div>
-            <div class="awards__item" data-fade-in="">
-              Awwwards ⏤ Site of the Day (x3)
-            </div>
-            <div class="awards__item" data-fade-in="">
-              Awwwards ⏤ Developer Award (x3)
-            </div>
-            <div class="awards__item" data-fade-in="">
-              Awwwards ⏤ Jury Member 2023
-            </div>
-            <div class="awards__item" data-fade-in="">
-              Designnominees ⏤ Site of the Day
+
+            <div class="awards__item" data-fade-in>
+              <div>B.Tech CSE — Full Stack Dev</div>
+              <div class="awards__item sub">
+                Sharda University, Greater Noida &nbsp;·&nbsp; 2024 – 2028
+              </div>
+              <div style="margin-top:12px;">
+                <span class="tag-pill">MERN Stack</span>
+                <span class="tag-pill">Xebia Academic Alliance</span>
+                <span class="tag-pill">CSE</span>
+              </div>
             </div>
 
-            <div class="awards__item" data-fade-in="">
-              2022 Figma Community Award ⏤ Nominee
+            <div class="awards__item" data-fade-in>
+              <div>Full Stack Web Dev Internship</div>
+              <div class="awards__item sub">
+                SmartEd, Online &nbsp;·&nbsp; Jun 2025 – Sep 2025
+              </div>
+              <div style="margin-top:12px;">
+                <span class="tag-pill">React.js</span>
+                <span class="tag-pill">Node.js</span>
+                <span class="tag-pill">Express.js</span>
+                <span class="tag-pill">MongoDB</span>
+              </div>
             </div>
-            <div class="awards__item" data-fade-in="">Maxibestof</div>
-            <div class="awards__item" data-fade-in="">Thegallery.io (x2)</div>
-            <div class="awards__item" data-fade-in="">
-              Klikkentheke ⏤ No 2326
-            </div>
-            <div class="awards__item" data-fade-in="">
-              Klikkentheke ⏤ No 2492
-            </div>
-            <div class="awards__item" data-fade-in="">
-              The Ultra Index® ⏤ For storytelling experience
-            </div>
-            <div class="awards__item" data-fade-in="">MUZLI</div>
+
           </div>
         </div>
 
         <div class="home__awards__right">
-          <div class="home__awards__stack" data-fade-in="">
-            <h2 class="home__content__title">Interests</h2>
+          <div class="home__awards__stack" data-fade-in>
+            <h2 class="home__content__title">Skills</h2>
             <p class="home__content__desc">
-              Art Direction, Brand Strategy, Creative Development, E-Commerce,
-              Webflow, 3D/Augmented Reality, Web3 <br />
-              <a
-                href="https://github.com/oluwadareseyi"
-                target="_blank"
-                rel="noopener noreferrer"
-                >See my Github</a
-              >
+              MongoDB, Express.js, React.js, Node.js, REST APIs, JWT Auth,
+              JavaScript (ES6+), Git &amp; GitHub, Postman, CRUD Operations — and always picking up something new.
+              <br /><br />
+              <a href="https://github.com/PiyushThapa6" target="_blank" rel="noopener noreferrer">See my GitHub →</a>
             </p>
           </div>
 
-          <div class="home__awards__ice" data-fade-in="">
-            <h2 class="home__content__title">ICEBREAKERS</h2>
+          <div class="home__awards__ice" data-fade-in>
+            <h2 class="home__content__title">Beyond the Screen</h2>
             <p class="home__content__desc">
-              I listen to Electronic and Alt music all the time, you can see
-              what I'm currently listening to on this
-              <a
-                href="https://music.seyi.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >MICROSITE.</a
-              >
-              I like traveling and good food (work with me so I can fund this).
-              <button class="contact-scroll">GET IN TOUCH</button> to know more
-              about me.
+              When I'm not debugging or learning something new, you'll find me out exploring, deep in a manga or comic, or doing some light gaming. I'm from Darjeeling — a place so beautiful, even the clouds can't stay away.
+              <br /><br />
+              <button class="contact-scroll-btn contact-scroll">Get in touch →</button>
             </p>
           </div>
         </div>
       </section>
 
+      <!-- ===== CONTACT ===== -->
       <section class="home__contact">
         <p class="home__contact__desc">
-          Got a question, proposal or project or want to work together on
-          something? Feel free to reach out.
+          Got a project, proposal, or just want to connect? I'm always open to a good conversation.
         </p>
         <div class="line-wrapper">
-          <span class="home__projects__line left">
-            <span></span>
-          </span>
+          <span class="home__projects__line left"><span></span></span>
         </div>
 
         <div class="marquee">
-          <a
-            href="mailto:oluwadareseyii@gmail.com?subject=Lets%20work%20together!&amp;body=Hello%2C%20I%20think%20we%20need%20you%20to%20work%20on%2Fcollaborate%20this%20particular%20product...%20Reach%20out%20as%20soon%20as%20you%20can."
-            class="marquee__wrap"
-          >
+          <a href="mailto:piyushthpa9614@gmail.com?subject=Let%27s%20work%20together!&body=Hi%20Piyush%2C%20I%20came%20across%20your%20portfolio..." class="marquee__wrap">
             <div class="marquee__inner">
               <span aria-hidden="true" class="inner-span">
-                <span
-                  class="slide-up"
-                  data-content="LET’S TALK — LET’S COLLABORATE — SAY HELLO — WANNA BE STARTING
-                SOMETHING?"
-                  aria-hidden="true"
-                ></span>
-                LET’S TALK — LET’S COLLABORATE — SAY HELLO — WANNA BE STARTING
-                SOMETHING?</span
-              >
+                <span class="slide-up" data-content="LET'S TALK — LET'S BUILD — SAY HELLO — DECODE IT TOGETHER —" aria-hidden="true"></span>
+                LET'S TALK — LET'S BUILD — SAY HELLO — DECODE IT TOGETHER —
+              </span>
               <span class="inner-span">
-                <span
-                  class="slide-up"
-                  data-content="LET’S TALK — LET’S COLLABORATE — SAY HELLO — WANNA BE STARTING
-                SOMETHING?"
-                  aria-hidden="true"
-                ></span>
-                LET’S TALK — LET’S COLLABORATE — SAY HELLO — WANNA BE STARTING
-                SOMETHING?</span
-              >
+                <span class="slide-up" data-content="LET'S TALK — LET'S BUILD — SAY HELLO — DECODE IT TOGETHER —" aria-hidden="true"></span>
+                LET'S TALK — LET'S BUILD — SAY HELLO — DECODE IT TOGETHER —
+              </span>
             </div>
           </a>
         </div>
 
         <div class="line-wrapper">
-          <span class="home__projects__line right">
-            <span></span>
-          </span>
+          <span class="home__projects__line right"><span></span></span>
         </div>
 
         <div class="home__contact__email">
-          <button class="email">oluwadareseyii@gmail.com</button>
+          <button class="email">piyushthpa9614@gmail.com</button>
           <div class="to-copy">
             <span>Click To Copy</span>
           </div>
         </div>
       </section>
 
+      <!-- ===== FOOTER ===== -->
       <footer class="home__footer" id="js-footer">
         <div class="home__footer__center">
           <div class="footer__links">
             <div class="link__flex">
               <div class="link__flex__inner">
-                <a
-                  href="https://twitter.com/seyi__xo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="c-button"
-                >
+                <a href="https://github.com/PiyushThapa6" target="_blank" rel="noopener noreferrer" class="c-button">
                   <span class="c-link">
-                    <span class="c-link__inner">
-                      <span> Twitter </span>
-                      <span class="c-link__animated"> Twitter </span>
-                    </span>
+                    <span class="c-link__inner"><span>GitHub</span></span>
+                    <span class="c-link__animated">GitHub</span>
                   </span>
                 </a>
-
-                <a
-                  href="https://www.instagram.com/seyi.motion/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="c-button"
-                >
+                <a href="https://www.linkedin.com/in/piyush-thapa-a29840334" target="_blank" rel="noopener noreferrer" class="c-button">
                   <span class="c-link">
-                    <span class="c-link__inner">
-                      <span> INSTAGRAM </span>
-                      <span class="c-link__animated"> INSTAGRAM </span>
-                    </span>
+                    <span class="c-link__inner"><span>LinkedIn</span></span>
+                    <span class="c-link__animated">LinkedIn</span>
                   </span>
                 </a>
               </div>
             </div>
-
             <div class="link__flex">
               <div class="link__flex__inner second">
-                <a
-                  href="https://github.com/oluwadareseyi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="c-button"
-                >
+                <a href="mailto:piyushthpa9614@gmail.com" class="c-button">
                   <span class="c-link">
-                    <span class="c-link__inner">
-                      <span> GITHUB </span>
-                      <span class="c-link__animated"> GITHUB </span>
-                    </span>
+                    <span class="c-link__inner"><span>Email</span></span>
+                    <span class="c-link__animated">Email</span>
                   </span>
                 </a>
-
-                <a
-                  href="https://www.linkedin.com/in/oluwadareseyi/"
-                  class="c-button"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="mailto:2024286197@ug.sharda.ac.in" class="c-button">
                   <span class="c-link">
-                    <span class="c-link__inner">
-                      <span> LINKEDIN </span>
-                      <span class="c-link__animated"> LINKEDIN </span>
-                    </span>
+                    <span class="c-link__inner"><span>University Mail</span></span>
+                    <span class="c-link__animated">University Mail</span>
                   </span>
                 </a>
               </div>
@@ -902,24 +952,16 @@
           </div>
         </div>
         <div class="home__footer__left">
-          <p class="place">MANCHESTER, UK</p>
+          <p class="place">Darjeeling → Greater Noida</p>
           <div class="time">
-            <span data-hour=""></span>
+            <span data-hour></span>
             <span class="flash">:</span>
-            <span data-minute=""></span>
+            <span data-minute></span>
           </div>
         </div>
-        <p class="home__footer__right">
-          Design by
-          <a
-            href="https://fayemi.design/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Isaac Fayemi
-          </a>
-        </p>
+
       </footer>
+
     </main>
 
     <script src="js/index.js" type="module"></script>
